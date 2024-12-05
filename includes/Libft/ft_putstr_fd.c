@@ -1,19 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/05 14:34:25 by doley             #+#    #+#             */
-/*   Updated: 2024/12/05 16:45:18 by doley            ###   ########.fr       */
+/*   Created: 2024/10/10 20:37:24 by doley             #+#    #+#             */
+/*   Updated: 2024/10/10 20:44:10 by doley            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINITALK_H
-# define MINITALK_H
+#include "libft.h"
 
-# include "Ft_printf/printf.h"
-# include "Libft/libft.h"
+void	ft_putstr_fd(char *s, int fd)
+{
+	size_t	i;
 
-#endif
+	if (!s)
+		return ;
+	i = 0;
+	while (s[i])
+	{
+		write(fd, &s[i], 1);
+		i++;
+	}
+}

@@ -1,19 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/05 14:34:25 by doley             #+#    #+#             */
-/*   Updated: 2024/12/05 16:45:18 by doley            ###   ########.fr       */
+/*   Created: 2024/10/09 01:04:22 by doley             #+#    #+#             */
+/*   Updated: 2024/10/11 22:01:00 by doley            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINITALK_H
-# define MINITALK_H
+#include "libft.h"
 
-# include "Ft_printf/printf.h"
-# include "Libft/libft.h"
+char	*ft_strrchr(const char *s, int c)
+{
+	unsigned char	ch;
+	char			*str;
 
-#endif
+	ch = (unsigned char)c;
+	str = (char *)s;
+	while (*str)
+		str++;
+	if (ch == '\0')
+		return (str);
+	while (str >= (char *)s)
+	{
+		if (*str == ch)
+			return (str);
+		str--;
+	}
+	return (NULL);
+}
