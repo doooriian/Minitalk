@@ -6,7 +6,7 @@
 /*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 21:29:39 by doley             #+#    #+#             */
-/*   Updated: 2024/10/11 21:48:32 by doley            ###   ########.fr       */
+/*   Updated: 2024/12/07 18:22:32 by doley            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_itoa(int n);
 char	**ft_split(char const *s, char c);
 char	*ft_strtrim(char const *s1, char const *set);
-char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strjoin(char *s1, char *s2);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 int		ft_toupper(int c);
 int		ft_tolower(int c);

@@ -6,14 +6,21 @@
 /*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 14:34:25 by doley             #+#    #+#             */
-/*   Updated: 2024/12/05 16:45:18 by doley            ###   ########.fr       */
+/*   Updated: 2024/12/07 15:53:50 by doley            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MINITALK_H
 # define MINITALK_H
 
+#define  _POSIX_C_SOURCE  200809L
+
+# include <signal.h>
+# include <unistd.h>
+# include <stdlib.h>
 # include "Ft_printf/printf.h"
 # include "Libft/libft.h"
+
+
 
 #endif
