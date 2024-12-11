@@ -6,7 +6,7 @@
 /*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 13:54:47 by doley             #+#    #+#             */
-/*   Updated: 2024/12/11 17:49:49 by doley            ###   ########.fr       */
+/*   Updated: 2024/12/11 18:16:31 by doley            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static char	*add_char(char c, char *str)
 static void	handle_sigint(int sig)
 {
 	(void)sig;
-	ft_printf("\nServer is shutting down...\n");
+	ft_printf("\n\e[31;49;1mServer is shutting down...\e[0m\n");
 	exit(0);
 }
 
@@ -68,8 +68,8 @@ static void	handle_server(int sig, siginfo_t *info, void *context)
 
 void	ft_print_error(void)
 {
-	ft_printf("Error : wrong format! "
-		"The structure should be like that :\n\n");
+	ft_printf("\e[31;49;1mError : wrong format! \e[0m"
+		"\n💡 \e[33;3mThe structure should be like that :\e[0m\n\n");
 	ft_printf("                         ");
 	ft_printf("./server\n\n");
 	ft_printf("For example : ./server_bonus\n");
@@ -92,8 +92,8 @@ int	main(int argc, char **argv)
 		ft_print_error();
 		return (0);
 	}
-	ft_printf("Welcome to Dorian's server !\n");
-	ft_printf("My PID is : %d\n", getpid());
+	ft_printf("\n\e[35;3;1m🎉 Welcome to Dorian's server ! 🎉\e[0m\n");
+	ft_printf("\nMy PID is : \e[32;1;4m%d\e[0m\n\n", getpid());
 	sigaction(SIGUSR1, &sa, NULL);
 	sigaction(SIGUSR2, &sa, NULL);
 	sigaction(SIGINT, &sa_sigint, NULL);

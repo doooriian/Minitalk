@@ -6,7 +6,7 @@
 /*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 13:54:43 by doley             #+#    #+#             */
-/*   Updated: 2024/12/11 17:50:17 by doley            ###   ########.fr       */
+/*   Updated: 2024/12/11 18:04:48 by doley            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,13 @@ static void	handle_client(int sig)
 	if (sig == SIGUSR1)
 		g_confirmation = 1;
 	else
-		ft_printf("message receive!\n");
+		ft_printf("\e[32;49;1mmessage receive!\e[0m\n");
 }
 
 static void	handle_sigint(int sig)
 {
 	(void)sig;
-	ft_printf("\nClient is shutting down...\n");
+	ft_printf("\n\e[31;49;1mClient is shutting down...\e[0m\n");
 	exit(0);
 }
 
@@ -54,8 +54,8 @@ static int	check_input(int argc, char **argv)
 	i = 0;
 	if (argc != 3)
 	{
-		ft_printf("Error : wrong format!\n\n"
-			"The structure should be like that :\n\n");
+		ft_printf("\e[31;49;1mError : wrong format!\e[0m\n\n"
+			"💡 \e[33;3mThe structure should be like that :\e[0m\n\n");
 		ft_printf("                         ");
 		ft_printf("./client <PID> (message)\n\n");
 		ft_printf("For example : ./client 1491 HelloWorld\n");
@@ -65,8 +65,8 @@ static int	check_input(int argc, char **argv)
 	{
 		if (argv[1][i] < '0' || argv[1][i] > '9')
 		{
-			ft_printf("Error : not a PID!\n\n");
-			ft_printf("A PID must contain only digits\n");
+			ft_printf("\e[31;49;1mError : not a PID!\e[0m\n\n");
+			ft_printf("💡 \e[33;3mA PID must contain only digits\e[0m\n");
 			return (0);
 		}
 		i++;
