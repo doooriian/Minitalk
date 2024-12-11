@@ -6,7 +6,7 @@
 /*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 13:54:27 by doley             #+#    #+#             */
-/*   Updated: 2024/12/11 16:50:22 by doley            ###   ########.fr       */
+/*   Updated: 2024/12/11 17:15:03 by doley            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,6 @@ static void	handle_client(int sig)
 {
 	if (sig == SIGUSR1)
 		g_confirmation = 1;
-	else
-		ft_printf("message receive!\n");
 }
 
 static void	handle_sigint(int sig)
