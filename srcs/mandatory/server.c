@@ -6,7 +6,7 @@
 /*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 13:54:47 by doley             #+#    #+#             */
-/*   Updated: 2024/12/11 16:31:00 by doley            ###   ########.fr       */
+/*   Updated: 2024/12/11 17:12:40 by doley            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static char	*add_char(char c, char *str)
 static void	handle_sigint(int sig)
 {
     (void)sig;
-    ft_printf("Server is shutting down...\n");
+    ft_printf("\nServer is shutting down...\n");
     exit(0);
 }
 
