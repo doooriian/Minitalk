@@ -6,7 +6,7 @@
 /*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 13:54:27 by doley             #+#    #+#             */
-/*   Updated: 2024/12/07 18:28:28 by doley            ###   ########.fr       */
+/*   Updated: 2024/12/11 16:50:22 by doley            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,19 @@ static void	send_char(int server_pid, char c)
 	}
 }
 
-static void	handler_client(int sig)
+static void	handle_client(int sig)
 {
 	if (sig == SIGUSR1)
 		g_confirmation = 1;
 	else
 		ft_printf("message receive!\n");
+}
+
+static void	handle_sigint(int sig)
+{
+	(void)sig;
+    ft_printf("\nClient is shutting down...\n");
+    exit(0);
 }
 
 static int	check_input(int argc, char **argv)
@@ -72,16 +79,21 @@ int	main(int argc, char **argv)
 	int					server_pid;
 	int					i;
 	struct sigaction 	sa;
+	struct sigaction	sa_sigint;
 
 	if (!check_input(argc, argv))
 		return (1);
 	i = 0;
 	server_pid = ft_atoi(argv[1]);
-	sa.sa_handler = handler_client;
+	sa.sa_handler = handle_client;
 	sigemptyset(&sa.sa_mask);
 	sa.sa_flags = 0;
+	sa_sigint.sa_handler = handle_sigint;
+	sigemptyset(&sa_sigint.sa_mask);
+	sa_sigint.sa_flags = 0;
 	sigaction(SIGUSR1, &sa, NULL);
 	sigaction(SIGUSR2, &sa, NULL);
+	sigaction(SIGINT, &sa_sigint, NULL);
 	while (argv[2][i])
 	{
 		send_char(server_pid, argv[2][i]);
