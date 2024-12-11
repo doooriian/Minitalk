@@ -6,7 +6,7 @@
 /*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 13:54:27 by doley             #+#    #+#             */
-/*   Updated: 2024/12/11 17:15:03 by doley            ###   ########.fr       */
+/*   Updated: 2024/12/11 17:50:36 by doley            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ static void	handle_client(int sig)
 static void	handle_sigint(int sig)
 {
 	(void)sig;
-    ft_printf("\nClient is shutting down...\n");
-    exit(0);
+	ft_printf("\nClient is shutting down...\n");
+	exit(0);
 }
 
 static int	check_input(int argc, char **argv)
@@ -76,7 +76,7 @@ int	main(int argc, char **argv)
 {
 	int					server_pid;
 	int					i;
-	struct sigaction 	sa;
+	struct sigaction	sa;
 	struct sigaction	sa_sigint;
 
 	if (!check_input(argc, argv))
