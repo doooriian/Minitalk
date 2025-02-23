@@ -62,6 +62,9 @@ Clone the repository and use the following commands in your terminal:
 # Compile the project
 make all
 
+# Compile the bonus
+make bonus
+
 # Remove object files
 make clean
 
@@ -70,3 +73,46 @@ make fclean
 
 # Clean and recompile
 make re
+
+```
+
+Start the server first, which will display its PID, ready to receive messages:
+
+```bash
+./server
+How to Run the Client
+
+In another terminal, run the client with the server PID and the message as arguments:
+
+./client <SERVER_PID> "Your message here"
+
+Example:
+
+./client 12345 "Hello, 42 School!"
+```
+## 🧪 Testing
+
+The implementation was thoroughly tested using multiple scenarios, including:
+
+- Sending short and long messages.
+- Handling multibyte characters.
+- Simulating rapid consecutive messages to validate synchronization.
+- **Bonus:** Stress tests for ensuring reliable transmission under heavy loads.
+
+Additional custom scripts and tools were developed to simulate edge cases and verify the successful receipt of messages by the server.
+
+## 📸 Visual Example
+
+![Communicating Process](https://github.com/doooriian/42-Badges/blob/main/Minitalk.gif)
+
+## ✅ Results
+
+Here’s my score for the Minitalk project:
+
+<p align="center">
+  <img src="https://github.com/doooriian/42-Badges/blob/main/badges/LibftGrade.png" alt="Libft Grade">
+</p>
+
+## 📬 Contact
+
+Feel free to reach out or contribute to this project on [GitHub](https://github.com/doooriian)!
