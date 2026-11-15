@@ -1,23 +1,14 @@
-<p align="center">
-  <a href="https://42.fr/">
-    <img src="https://github.com/doooriian/42-Badges/blob/main/42_Logo.png" alt="42 Logo" width="100" height="100">
-  </a>
+<div align="center">
 
-  <h1 align="center">Minitalk</h1>
+<a href="https://42.fr/"><img src="https://raw.githubusercontent.com/doooriian/42-Badges/main/badges/minitalkm.png" width="125" alt="Minitalk 42 project badge" /></a>
 
-  <p align="center">
-    A messaging project from 42 School based on inter-process communication using signals.
-    <br /><br />
-    <img src="https://github.com/doooriian/42-Badges/blob/main/badges/minitalkm.png" alt="Minitalk Bonus Badge" width="125">
-  </p>
-<p align="center"><img src="https://img.shields.io/badge/42%20School-Project-7C3AED?style=flat-square" alt="42 School project" /></p>
+# Minitalk
 
-<p align="center">
-  <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/doooriian/Minitalk?color=1A237E" />
-  <img alt="Code language count" src="https://img.shields.io/github/languages/count/doooriian/Minitalk?color=00BCD4" />
-  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/doooriian/Minitalk?color=7B1FA2" />
-  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/doooriian/Minitalk?color=D32F2F" />
-</p>
+**Inter-process communication with Unix signals**
+
+<img src="https://img.shields.io/badge/42%20School-Project-7C3AED?style=flat-square" alt="42 School project" />
+
+</div>
 
 ---
 
