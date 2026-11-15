@@ -1,62 +1,106 @@
-<div align="center">
+<p align="center">
+  <a href="https://42.fr/">
+    <img src="https://github.com/doooriian/42-Badges/blob/main/42_Logo.png" alt="42 Logo" width="100" height="100">
+  </a>
 
-<a href="https://42.fr/"><img src="https://raw.githubusercontent.com/doooriian/42-Badges/main/badges/minitalkm.png" alt="Minitalk 42 badge" width="125" /></a>
+  <h1 align="center">Minitalk</h1>
 
-# Minitalk
+  <p align="center">
+    A messaging project from 42 School based on inter-process communication using signals.
+    <br /><br />
+    <img src="https://github.com/doooriian/42-Badges/blob/main/badges/minitalkm.png" alt="Minitalk Bonus Badge" width="125">
+  </p>
+<p align="center"><img src="https://img.shields.io/badge/42%20School-Project-7C3AED?style=flat-square" alt="42 School project" /></p>
 
-**42 School project · Inter-process messaging with Unix signals**
-
-<img src="https://img.shields.io/badge/42_Project-C%20%7C%20IPC-7C3AED?style=flat-square" alt="Minitalk technology" />
-<img src="https://img.shields.io/badge/Documentation-Project_Overview-334155?style=flat-square" alt="Project documentation" />
-
-</div>
-
-## 🔎 Overview
-
-A small client/server messaging application that transmits text using UNIX signals rather than sockets.
-
-## ✨ Features
-
-- Start a server process and display its PID
-- Send messages from a client to a chosen server PID
-- Encode and reconstruct message data through signals
-- Separate mandatory and bonus client/server implementations
-
-## 🧩 Technical approach
-
-The code is split between client and server programs; `SIGUSR1` and `SIGUSR2` are the transport mechanism. Signal handling and synchronization are the core of the exercise.
-
-> **Tech stack** · C · POSIX signals · Make.
-
-## 🚀 Build and usage
-
-```bash
-git clone https://github.com/doooriian/Minitalk.git
-cd Minitalk
-make
-./server
-```
-
-In another terminal, replace `<server_pid>` with the PID shown by the server:
-
-```bash
-./client <server_pid> 'Hello, 42!'
-```
-
-Build separate bonus executables with `make bonus` (`server_bonus` and `client_bonus`).
-
-## 🧪 Verification
-
-Build in the documented environment, exercise normal scenarios and edge cases, and compare actual behaviour with the expected output. No automated CI test suite is included in this repository.
-
-## ⚠️ Notes and limitations
-
-Signals are used as a learning exercise in inter-process communication; this is not a network chat service.
+<p align="center">
+  <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/doooriian/Minitalk?color=1A237E" />
+  <img alt="Code language count" src="https://img.shields.io/github/languages/count/doooriian/Minitalk?color=00BCD4" />
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/doooriian/Minitalk?color=7B1FA2" />
+  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/doooriian/Minitalk?color=D32F2F" />
+</p>
 
 ---
 
-<div align="center">
+## 🔎 Overview
 
-<sub>Part of the <a href="https://42.fr/">42 curriculum</a> · <a href="https://github.com/doooriian">Back to my GitHub profile</a></sub>
+**Minitalk** is an individual project at 42 School that challenges students to implement a simple yet robust communication system between processes using UNIX signals. In this project, a server process waits for incoming messages sent by a client process using `SIGUSR1` and `SIGUSR2` signals. The goal is to reliably transmit complete messages from the client to the server, handling data conversion and synchronization without using standard inter-process communication methods.
 
-</div>
+For the bonus part, I extended the project capabilities to handle more complex scenarios such as:
+- **Enhanced communication protocol**: Allowing for larger and multibyte messages.
+- **Reliable transmission**: Implementations to confirm message receipt and handle potential data loss.
+- **Improved synchronization**: Managing the signal flow efficiently even with overlapping transmissions.
+
+---
+
+## ✨ Key Features
+
+- **Signal-Based Communication**: Uses UNIX signals (`SIGUSR1` and `SIGUSR2`) to transmit data bit by bit.
+- **Server-Client Architecture**: 
+  - **Server**: Continuously listens for incoming signals and reconstructs messages.
+  - **Client**: Converts the message into binary format and sends it to the server.
+- **Bonus Implementations**:
+  - Support for extended messaging, ensuring that the entire message is reliably transmitted.
+  - Implemented acknowledgement signals for improved synchronization between client and server.
+- **Error Handling**: Robust error handling to manage unexpected signals and invalid inputs.
+
+---
+
+## 🛠️ Technologies Used
+
+- **[C](https://devdocs.io/c/)** — Core programming language.
+- **[Makefile](https://www.gnu.org/software/make/manual/make.html)** — Build automation tool.
+- **[UNIX Signals](https://www.math.stonybrook.edu/~ccc/dfc/dfc/signals.html)** — For inter-process communication.
+
+---
+
+## 🚀 How to Build and Run
+
+Clone the repository and use the following commands in your terminal:
+
+```bash
+# Compile the project
+make all
+
+# Compile the bonus
+make bonus
+
+# Remove object files
+make clean
+
+# Remove object files and executable
+make fclean
+
+# Clean and recompile
+make re
+
+```
+
+Start the server first, which will display its PID, ready to receive messages:
+
+```bash
+./server
+How to Run the Client
+
+In another terminal, run the client with the server PID and the message as arguments:
+
+./client <SERVER_PID> "Your message here"
+
+Example:
+
+./client 12345 "Hello, 42 School!"
+```
+## 🧪 Testing
+
+The implementation was thoroughly tested using multiple scenarios, including:
+
+- Sending short and long messages.
+- Handling multibyte characters.
+- Simulating rapid consecutive messages to validate synchronization.
+- **Bonus:** Stress tests for ensuring reliable transmission under heavy loads.
+
+Additional custom scripts and tools were developed to simulate edge cases and verify the successful receipt of messages by the server.
+
+
+## 📬 Contact
+
+Feel free to reach out or contribute to this project on [GitHub](https://github.com/doooriian)!
