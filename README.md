@@ -1,29 +1,18 @@
-<br />
-<p align="center">
-  <p align="center">
-  <a href="https://42.fr/">
-    <img src="https://github.com/doooriian/42-Badges/blob/main/42_Logo.png" alt="42 Logo" width="250" height="250">
-  </a>
+<div align="center">
 
-  <h1 align="center">Minitalk</h1>
+<a href="https://42.fr/"><img src="https://raw.githubusercontent.com/doooriian/42-Badges/main/badges/minitalkm.png" width="125" alt="Minitalk 42 project badge" /></a>
 
-  <p align="center">
-    A messaging project from 42 School based on inter-process communication using signals.
-    <br /><br />
-    <img src="https://github.com/doooriian/42-Badges/blob/main/badges/minitalkm.png" alt="Minitalk Bonus Badge" width="150">
-  </p>
-</p>
+# Minitalk
 
-<p align="center">
-  <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/doooriian/Minitalk?color=1A237E" />
-  <img alt="Code language count" src="https://img.shields.io/github/languages/count/doooriian/Minitalk?color=00BCD4" />
-  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/doooriian/Minitalk?color=7B1FA2" />
-  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/doooriian/Minitalk?color=D32F2F" />
-</p>
+**Inter-process communication with Unix signals**
+
+<img src="https://img.shields.io/badge/42%20School-Project-7C3AED?style=flat-square" alt="42 School project" />
+
+</div>
 
 ---
 
-## ✨ Overview
+## 🔎 Overview
 
 **Minitalk** is an individual project at 42 School that challenges students to implement a simple yet robust communication system between processes using UNIX signals. In this project, a server process waits for incoming messages sent by a client process using `SIGUSR1` and `SIGUSR2` signals. The goal is to reliably transmit complete messages from the client to the server, handling data conversion and synchronization without using standard inter-process communication methods.
 
@@ -34,7 +23,7 @@ For the bonus part, I extended the project capabilities to handle more complex s
 
 ---
 
-## 📑 Key Features
+## ✨ Key Features
 
 - **Signal-Based Communication**: Uses UNIX signals (`SIGUSR1` and `SIGUSR2`) to transmit data bit by bit.
 - **Server-Client Architecture**: 
@@ -57,40 +46,32 @@ For the bonus part, I extended the project capabilities to handle more complex s
 
 ## 🚀 How to Build and Run
 
-Clone the repository and use the following commands in your terminal:
+Clone and build the client and server:
 
 ```bash
-# Compile the project
-make all
-
-# Compile the bonus
-make bonus
-
-# Remove object files
-make clean
-
-# Remove object files and executable
-make fclean
-
-# Clean and recompile
-make re
-
+git clone https://github.com/doooriian/Minitalk.git
+cd Minitalk
+make
 ```
 
-Start the server first, which will display its PID, ready to receive messages:
+Start the server in one terminal:
 
 ```bash
 ./server
-How to Run the Client
+```
 
-In another terminal, run the client with the server PID and the message as arguments:
+The server prints its process ID (PID). In a second terminal, send a message using that PID:
 
-./client <SERVER_PID> "Your message here"
-
-Example:
-
+```bash
 ./client 12345 "Hello, 42 School!"
 ```
+
+Replace `12345` with the PID actually printed by your server.
+
+Bonus executables can be built with `make bonus` and run as `./server_bonus` and `./client_bonus`. Use `make clean`, `make fclean` or `make re` to manage build outputs.
+
+---
+
 ## 🧪 Testing
 
 The implementation was thoroughly tested using multiple scenarios, including:
@@ -102,17 +83,6 @@ The implementation was thoroughly tested using multiple scenarios, including:
 
 Additional custom scripts and tools were developed to simulate edge cases and verify the successful receipt of messages by the server.
 
-## 📸 Visual Example
-
-![Communicating Process](https://github.com/doooriian/42-Badges/blob/main/Minitalk.gif)
-
-## ✅ Results
-
-Here’s my score for the Minitalk project:
-
-<p align="center">
-  <img src="https://github.com/doooriian/42-Badges/blob/main/badges/LibftGrade.png" alt="Libft Grade">
-</p>
 
 ## 📬 Contact
 
