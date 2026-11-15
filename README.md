@@ -46,40 +46,32 @@ For the bonus part, I extended the project capabilities to handle more complex s
 
 ## 🚀 How to Build and Run
 
-Clone the repository and use the following commands in your terminal:
+Clone and build the client and server:
 
 ```bash
-# Compile the project
-make all
-
-# Compile the bonus
-make bonus
-
-# Remove object files
-make clean
-
-# Remove object files and executable
-make fclean
-
-# Clean and recompile
-make re
-
+git clone https://github.com/doooriian/Minitalk.git
+cd Minitalk
+make
 ```
 
-Start the server first, which will display its PID, ready to receive messages:
+Start the server in one terminal:
 
 ```bash
 ./server
-How to Run the Client
+```
 
-In another terminal, run the client with the server PID and the message as arguments:
+The server prints its process ID (PID). In a second terminal, send a message using that PID:
 
-./client <SERVER_PID> "Your message here"
-
-Example:
-
+```bash
 ./client 12345 "Hello, 42 School!"
 ```
+
+Replace `12345` with the PID actually printed by your server.
+
+Bonus executables can be built with `make bonus` and run as `./server_bonus` and `./client_bonus`. Use `make clean`, `make fclean` or `make re` to manage build outputs.
+
+---
+
 ## 🧪 Testing
 
 The implementation was thoroughly tested using multiple scenarios, including:
