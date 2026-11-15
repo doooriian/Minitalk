@@ -4,24 +4,16 @@
 
 # Minitalk
 
-**42 School · 📡 Software engineering project**
+**42 School project · Inter-process messaging with Unix signals**
 
 <img src="https://img.shields.io/badge/42_Project-C%20%7C%20IPC-7C3AED?style=flat-square" alt="Minitalk technology" />
 <img src="https://img.shields.io/badge/Documentation-Project_Overview-334155?style=flat-square" alt="Project documentation" />
 
 </div>
 
----
-
-
----
-
 ## 🔎 Overview
 
 A small client/server messaging application that transmits text using UNIX signals rather than sockets.
-
-
----
 
 ## ✨ Features
 
@@ -30,17 +22,11 @@ A small client/server messaging application that transmits text using UNIX signa
 - Encode and reconstruct message data through signals
 - Separate mandatory and bonus client/server implementations
 
-
----
-
 ## 🧩 Technical approach
 
 The code is split between client and server programs; `SIGUSR1` and `SIGUSR2` are the transport mechanism. Signal handling and synchronization are the core of the exercise.
 
 > **Tech stack** · C · POSIX signals · Make.
-
-
----
 
 ## 🚀 Build and usage
 
@@ -59,15 +45,9 @@ In another terminal, replace `<server_pid>` with the PID shown by the server:
 
 Build separate bonus executables with `make bonus` (`server_bonus` and `client_bonus`).
 
-
----
-
 ## 🧪 Verification
 
 Build in the documented environment, exercise normal scenarios and edge cases, and compare actual behaviour with the expected output. No automated CI test suite is included in this repository.
-
-
----
 
 ## ⚠️ Notes and limitations
 
