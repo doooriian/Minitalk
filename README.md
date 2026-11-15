@@ -2,8 +2,6 @@
 
 > **42 School project** · C · UNIX signals · IPC
 
-A small client/server messaging application that transmits text using UNIX signals rather than sockets.
-
 ## Overview
 
 A small client/server messaging application that transmits text using UNIX signals rather than sockets.
